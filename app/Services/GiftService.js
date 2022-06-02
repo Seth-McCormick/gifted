@@ -19,7 +19,7 @@ class GiftService {
         params.q = q
         // console.log('got to the service');
         const res = await gifApi.get('search', { params })
-        console.log('getting gif', res.data, q);
+        console.log('getting gif', res.data.data);
 
     }
 

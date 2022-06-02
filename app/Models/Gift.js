@@ -1,14 +1,16 @@
 export class Gift {
     constructor(data) {
         this.description = data.description
-        this.URL = data.URL
+        this.url = data.url
         this.gif = data.gif
     }
 
 
     get GifTemplate() {
         return `
-${'this is OG'}
+<div class="col-12">
+<img src="${this.url}" alt="">
+</div>
 `
     }
 }

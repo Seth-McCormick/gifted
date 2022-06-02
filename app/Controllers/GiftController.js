@@ -7,6 +7,10 @@ import { ProxyState } from "../AppState.js";
 
 function _drawGif() {
     let gif = ProxyState.gif
+    let template = ''
+    gif.forEach(g => template += g.GifTemplate)
+
+    document.getElementById('loading-gif').innerHTML = template
 
 
 }
@@ -14,7 +18,7 @@ function _drawGif() {
 export class GiftController {
     constructor() {
         // console.log('loaded controller');
-
+        ProxyState.on('gif', _drawGif)
 
     }
 
