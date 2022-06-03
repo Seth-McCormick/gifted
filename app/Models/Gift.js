@@ -8,7 +8,8 @@ export class Gift {
 
     get GifTemplate() {
         return `
-${'this is OG'}
+        <div class="col-12"><img src="" alt=""></div>
+   
 `
     }
 }
