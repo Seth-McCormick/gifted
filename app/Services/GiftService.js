@@ -1,3 +1,4 @@
+import { ProxyState } from "../AppState.js";
 
 
 let params = {
@@ -20,7 +21,12 @@ class GiftService {
         // console.log('got to the service');
         const res = await gifApi.get('search', { params })
         console.log('getting gif', res.data.data);
-        // const gif = res.data.data.map()
+        // NOTE set the proxy state array to the data of the gifs
+        // NOTE we then map or search over the data 
+        // NOTE then set g as each data point and access the url of each data point 
+        // NOTE this turns each of the urls into a usable url
+        ProxyState.gifs = res.data.data.map(g => g.images.downsized_large.url)
+
 
     }
 

@@ -6,20 +6,27 @@ import { ProxyState } from "../AppState.js";
 
 
 function _drawGif() {
-    let gif = ProxyState.gif
+
     let template = ''
-    gif.forEach(g => template += g.GifTemplate)
-
-    document.getElementById('loading-gif').innerHTML = template
-
+    // NOTE changed p to url and we are accessing each url of the gif
+    ProxyState.gifs.forEach(url => template += `<div class="col-12" onclick='app.giftController.setUrl(${url})'><img class='img-fluid' src="${url}" alt=""></div>`)
+document.getElementById('loading-gif').innerHTML = template
 
 }
 
 export class GiftController {
     constructor() {
         // console.log('loaded controller');
-        ProxyState.on('gif', _drawGif)
+        // NOTE added this to watch for a change for our gif proxy state
+ProxyState.on('gifs', _drawGif)
 
+    }
+
+    // NOTE this was added but havent done anything with it. 
+    // NOTE we will us this to send the url into out Gift making form to make gift
+
+    setUrl(url){
+        console.log(url);
     }
 
     async searchGif() {
