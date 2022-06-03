@@ -1,7 +1,7 @@
 export class Gift {
     constructor(data) {
         this.description = data.description
-        this.URL = data.URL
+        this.url = data.url
         this.gif = data.gif
     }
 
