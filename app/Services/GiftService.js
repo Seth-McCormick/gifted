@@ -20,6 +20,7 @@ class GiftService {
         // console.log('got to the service');
         const res = await gifApi.get('search', { params })
         console.log('getting gif', res.data.data);
+        // const gif = res.data.data.map()
 
     }
 
