@@ -26,7 +26,7 @@ class GiftService {
         // NOTE then set g as each data point and access the url of each data point 
         // NOTE this turns each of the urls into a usable url
         ProxyState.gifs = res.data.data.map(g => g.images.downsized_large.url)
-       
+
 
     }
 
